@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.android.material.internal;
+package android.support.design.widget;
 
 import android.animation.TimeInterpolator;
+import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -27,28 +28,23 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.support.annotation.ColorInt;
+import android.support.annotation.RestrictTo;
+import android.support.annotation.VisibleForTesting;
+import android.support.design.animation.AnimationUtils;
+import android.support.v4.text.TextDirectionHeuristicsCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewCompat;
+import android.support.v7.widget.TintTypedArray;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 
-import com.google.android.material.animation.AnimationUtils;
-
-import androidx.annotation.ColorInt;
-import androidx.annotation.RestrictTo;
-import androidx.annotation.VisibleForTesting;
-import androidx.appcompat.widget.TintTypedArray;
-import androidx.core.math.MathUtils;
-import androidx.core.text.TextDirectionHeuristicsCompat;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-
-import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
-
 /**
- * Helper class for {@link com.google.android.material.appbar.SubtitleCollapsingToolbarLayout}.
+ * Helper class for {@link SubtitleCollapsingToolbarLayout}.
  */
-@RestrictTo(LIBRARY_GROUP)
+@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 public final class SubtitleCollapsingTextHelper {
 
     // Pre-JB-MR2 doesn't support HW accelerated canvas scaled title so we will workaround it
@@ -547,7 +543,7 @@ public final class SubtitleCollapsingTextHelper {
      * indicates that the layout is fully collapsed.
      */
     public void setExpansionFraction(float fraction) {
-        fraction = MathUtils.clamp(fraction, 0f, 1f);
+        fraction = 0; // MathUtils.clamp(fraction, 0f, 1f);
 
         if (fraction != expandedFraction) {
             expandedFraction = fraction;
@@ -1267,6 +1263,7 @@ public final class SubtitleCollapsingTextHelper {
         return Color.argb((int) a, (int) r, (int) g, (int) b);
     }
 
+    @SuppressLint("RestrictedApi")
     private static float lerp(
         float startValue, float endValue, float fraction, TimeInterpolator interpolator
     ) {

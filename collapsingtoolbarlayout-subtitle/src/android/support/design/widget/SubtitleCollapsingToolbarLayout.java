@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.material.appbar;
+package android.support.design.widget;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -25,6 +25,22 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
+import android.support.annotation.StyleRes;
+import android.support.design.animation.AnimationUtils;
+import android.support.design.internal.ThemeEnforcement;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v4.util.ObjectsCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.WindowInsetsCompat;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -33,27 +49,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 
-import com.google.android.material.animation.AnimationUtils;
-import com.google.android.material.internal.DescendantOffsetUtils;
-import com.google.android.material.internal.SubtitleCollapsingTextHelper;
-import com.google.android.material.internal.ThemeEnforcement;
-import com.hendraanggrian.material.subtitlecollapsingtoolbarlayout.R;
-
-import androidx.annotation.ColorInt;
-import androidx.annotation.DrawableRes;
-import androidx.annotation.IntRange;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.annotation.StyleRes;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.math.MathUtils;
-import androidx.core.util.ObjectsCompat;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import com.hendraanggrian.subtitlecollapsingtoolbarlayout.R;
 
 /**
  * @see CollapsingToolbarLayout

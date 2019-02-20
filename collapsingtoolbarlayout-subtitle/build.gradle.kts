@@ -11,23 +11,23 @@ android {
     defaultConfig {
         minSdkVersion(SDK_MIN)
         targetSdkVersion(SDK_TARGET)
-        versionName = VERSION_ANDROIDX
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        versionName = VERSION_SUPPORT
+        testInstrumentationRunner = "com.android.support.test.runner.AndroidJUnitRunner"
     }
     sourceSets {
-        getByName("main") {
+        /*getByName("main") {
             manifest.srcFile("AndroidManifest.xml")
             java.srcDirs("src")
             res.srcDir("res")
             resources.srcDir("src")
-        }
-        getByName("androidTest") {
+        }*/
+        /*getByName("androidTest") {
             setRoot("tests")
             manifest.srcFile("tests/AndroidManifest.xml")
             java.srcDir("tests/src")
             res.srcDir("tests/res")
             resources.srcDir("tests/src")
-        }
+        }*/
     }
     lintOptions {
         isCheckTestSources = true
@@ -40,9 +40,9 @@ android {
 }
 
 dependencies {
-    implementation(material("$VERSION_ANDROIDX-alpha02"))
+    implementation("com.android.support:design:28.0.0")
 
-    androidTestImplementation(truth())
+    /*androidTestImplementation(truth())
     androidTestImplementation(kotlin("stdlib", VERSION_KOTLIN))
     androidTestImplementation(kotlin("test-junit", VERSION_KOTLIN))
     androidTestImplementation(hendraanggrian("material", "errorbar-ktx", "$VERSION_ANDROIDX-alpha02"))
@@ -50,7 +50,7 @@ dependencies {
     androidTestImplementation(androidx("coordinatorlayout", version = "1.0.0"))
     androidTestImplementation(androidx("test.espresso", "espresso-core", VERSION_ESPRESSO))
     androidTestImplementation(androidx("test", "runner", VERSION_RUNNER))
-    androidTestImplementation(androidx("test", "rules", VERSION_RULES))
+    androidTestImplementation(androidx("test", "rules", VERSION_RULES))*/
 }
 
 publish {
@@ -62,7 +62,7 @@ publish {
     userOrg = RELEASE_USER
     groupId = RELEASE_GROUP
     artifactId = RELEASE_ARTIFACT
-    publishVersion = VERSION_ANDROIDX
+    publishVersion = VERSION_SUPPORT
     desc = RELEASE_DESC
     website = RELEASE_WEBSITE
 }
