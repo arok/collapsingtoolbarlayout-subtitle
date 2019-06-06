@@ -7,7 +7,6 @@ plugins {
 
 android {
     compileSdkVersion(SDK_TARGET)
-    buildToolsVersion(BUILD_TOOLS)
     defaultConfig {
         minSdkVersion(SDK_MIN)
         targetSdkVersion(SDK_TARGET)
@@ -15,12 +14,12 @@ android {
         testInstrumentationRunner = "com.android.support.test.runner.AndroidJUnitRunner"
     }
     sourceSets {
-        /*getByName("main") {
+        getByName("main") {
             manifest.srcFile("AndroidManifest.xml")
             java.srcDirs("src")
             res.srcDir("res")
             resources.srcDir("src")
-        }*/
+        }
         /*getByName("androidTest") {
             setRoot("tests")
             manifest.srcFile("tests/AndroidManifest.xml")
@@ -42,12 +41,12 @@ android {
 dependencies {
     implementation("com.android.support:design:28.0.0")
 
-    /*androidTestImplementation(truth())
+    /*testImplementation(truth())
     androidTestImplementation(kotlin("stdlib", VERSION_KOTLIN))
     androidTestImplementation(kotlin("test-junit", VERSION_KOTLIN))
     androidTestImplementation(hendraanggrian("material", "errorbar-ktx", "$VERSION_ANDROIDX-alpha02"))
-    androidTestImplementation(androidx("appcompat", version = "1.0.0"))
-    androidTestImplementation(androidx("coordinatorlayout", version = "1.0.0"))
+    androidTestImplementation(androidx("appcompat", version = "$VERSION_ANDROIDX-alpha05"))
+    androidTestImplementation(androidx("coordinatorlayout", version = "$VERSION_ANDROIDX-alpha01"))
     androidTestImplementation(androidx("test.espresso", "espresso-core", VERSION_ESPRESSO))
     androidTestImplementation(androidx("test", "runner", VERSION_RUNNER))
     androidTestImplementation(androidx("test", "rules", VERSION_RULES))*/
