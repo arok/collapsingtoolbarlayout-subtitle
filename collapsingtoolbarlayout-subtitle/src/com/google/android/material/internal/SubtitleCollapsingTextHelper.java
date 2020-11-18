@@ -721,7 +721,7 @@ public final class SubtitleCollapsingTextHelper {
         } else {
             final float offset = (collapsedBounds.height() - (titleHeight + subtitleHeight)) / 3;
             collapsedTitleDrawY = collapsedBounds.top + offset - titleTextPaint.ascent();
-            collapsedSubtitleDrawY = collapsedBounds.top + offset * 2 + titleHeight - subtitleTextPaint.ascent();
+            collapsedSubtitleDrawY = collapsedBounds.top + offset * 2 + titleHeight - subtitleTextPaint.ascent() - 20;
         }
         switch (collapsedAbsGravity & GravityCompat.RELATIVE_HORIZONTAL_GRAVITY_MASK) {
             case Gravity.CENTER_HORIZONTAL:
