@@ -156,6 +156,10 @@ public class SubtitleCollapsingToolbarLayout extends FrameLayout {
                 a.getResourceId(R.styleable.SubtitleCollapsingToolbarLayout_collapsedSubtitleTextAppearance, 0));
         }
 
+        collapsingTextHelper.setExpandedSubTitleOffset(
+                a.getDimensionPixelOffset(R.styleable.SubtitleCollapsingToolbarLayout_expandedSubtitleOffset, 0)
+        );
+
         scrimVisibleHeightTrigger = a
             .getDimensionPixelSize(R.styleable.SubtitleCollapsingToolbarLayout_scrimVisibleHeightTrigger, -1);
 

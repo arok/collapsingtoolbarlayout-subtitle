@@ -61,6 +61,7 @@ public final class SubtitleCollapsingTextHelper {
     private int collapsedTextGravity = Gravity.CENTER_VERTICAL;
     private float expandedTitleTextSize, expandedSubtitleTextSize = 15;
     private float collapsedTitleTextSize, collapsedSubtitleTextSize = 15;
+    private float expandedSubTitleOffset;
     private ColorStateList expandedTitleTextColor, expandedSubtitleTextColor;
     private ColorStateList collapsedTitleTextColor, collapsedSubtitleTextColor;
 
@@ -554,6 +555,11 @@ public final class SubtitleCollapsingTextHelper {
         return expandedSubtitleTypeface != null ? expandedSubtitleTypeface : Typeface.DEFAULT;
     }
 
+    public void setExpandedSubTitleOffset(float expandedSubTitleOffset) {
+        this.expandedSubTitleOffset = expandedSubTitleOffset;
+        recalculate();
+    }
+
     /**
      * Set the value indicating the current scroll value. This decides how much of the background will
      * be displayed, as well as the title metrics/positioning.
@@ -772,17 +778,17 @@ public final class SubtitleCollapsingTextHelper {
         } else {
             switch (expandedAbsGravity & Gravity.VERTICAL_GRAVITY_MASK) {
                 case Gravity.BOTTOM:
-                    expandedTitleDrawY = expandedBounds.bottom - subtitleHeight - titleOffset - 30;
-                    expandedSubtitleDrawY = expandedBounds.bottom;
+                    expandedTitleDrawY = expandedBounds.bottom - subtitleHeight - titleOffset;
+                    expandedSubtitleDrawY = expandedBounds.bottom - - expandedSubTitleOffset;
                     break;
                 case Gravity.TOP:
                     expandedTitleDrawY = expandedBounds.top - titleTextPaint.ascent();
-                    expandedSubtitleDrawY = expandedTitleDrawY + subtitleHeight + titleOffset - 30;
+                    expandedSubtitleDrawY = expandedTitleDrawY + subtitleHeight + titleOffset - expandedSubTitleOffset;
                     break;
                 case Gravity.CENTER_VERTICAL:
                 default:
                     expandedTitleDrawY = expandedBounds.centerY() + titleOffset;
-                    expandedSubtitleDrawY = expandedTitleDrawY + subtitleHeight + titleOffset - 30;
+                    expandedSubtitleDrawY = expandedTitleDrawY + subtitleHeight + titleOffset - expandedSubTitleOffset;
                     break;
             }
         }

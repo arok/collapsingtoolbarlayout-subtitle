@@ -18,6 +18,9 @@
              subtitle will also be affected. -->
         <attr name="expandedTitleMarginBottom" />
 
+        <!-- Specifies offset between title and subTitle. -->
+        <attr name="expandedSubtitleOffset" format="dimension" />
+
         <!-- The text appearance of the CollapsingToolbarLayout's title when it is fully 'expanded' -->
         <attr name="expandedTitleTextAppearance" />
         <!-- The text appearance of the CollapsingToolbarLayout's subtitle when it is fully 'expanded' -->
