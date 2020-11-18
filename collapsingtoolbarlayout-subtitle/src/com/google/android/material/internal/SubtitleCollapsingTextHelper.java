@@ -772,7 +772,7 @@ public final class SubtitleCollapsingTextHelper {
         } else {
             switch (expandedAbsGravity & Gravity.VERTICAL_GRAVITY_MASK) {
                 case Gravity.BOTTOM:
-                    expandedTitleDrawY = expandedBounds.bottom - subtitleHeight - titleOffset;
+                    expandedTitleDrawY = expandedBounds.bottom - subtitleHeight - titleOffset - 30;
                     expandedSubtitleDrawY = expandedBounds.bottom;
                     break;
                 case Gravity.TOP:
